@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'dist_chrome',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.14
+3 info using node@v0.11.14-pre
+4 warn package.json webstore@0.0.1 No description
+5 warn package.json webstore@0.0.1 No repository field.
+6 warn package.json webstore@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'dist_chrome', null ]
+9 verbose cache add name=undefined spec="dist_chrome" args=["dist_chrome",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'dist_chrome',
+10 verbose parsed url   path: 'dist_chrome',
+10 verbose parsed url   href: 'dist_chrome' }
+11 silly lockFile 39c58f6a-dist-chrome dist_chrome
+12 verbose lock dist_chrome /home/arobles/.npm/39c58f6a-dist-chrome.lock
+13 silly lockFile 39c58f6a-dist-chrome dist_chrome
+14 silly lockFile 39c58f6a-dist-chrome dist_chrome
+15 verbose addNamed [ 'dist_chrome', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile d2604e6c-dist-chrome dist_chrome@
+18 verbose lock dist_chrome@ /home/arobles/.npm/d2604e6c-dist-chrome.lock
+19 silly addNameRange { name: 'dist_chrome', range: '*', hasData: false }
+20 verbose url raw dist_chrome
+21 verbose url resolving [ 'https://registry.npmjs.org/', './dist_chrome' ]
+22 verbose url resolved https://registry.npmjs.org/dist_chrome
+23 info trying registry request attempt 1 at 14:49:20
+24 http GET https://registry.npmjs.org/dist_chrome
+25 http 404 https://registry.npmjs.org/dist_chrome
+26 verbose headers { date: 'Mon, 22 Sep 2014 21:49:21 GMT',
+26 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '52',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   'x-served-by': 'cache-dfw1827-DFW',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1411422561.320155,VS0,VE44',
+26 verbose headers   connection: 'close' }
+27 silly registry.get cb [ 404,
+27 silly registry.get   { date: 'Mon, 22 Sep 2014 21:49:21 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-dfw1827-DFW',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1411422561.320155,VS0,VE44',
+27 silly registry.get     connection: 'close' } ]
+28 silly lockFile d2604e6c-dist-chrome dist_chrome@
+29 silly lockFile d2604e6c-dist-chrome dist_chrome@
+30 error 404 404 Not Found: dist_chrome
+30 error 404
+30 error 404 'dist_chrome' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'webstore'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Linux 3.13.0-34-generic
+32 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "dist_chrome" "--save-dev"
+33 error cwd /home/arobles/practices/record-store/web-app
+34 error node -v v0.11.14-pre
+35 error npm -v 1.4.14
+36 error code E404
+37 verbose exit [ 1, true ]

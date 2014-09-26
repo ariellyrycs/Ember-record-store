@@ -1,0 +1,26 @@
+{
+  "name": "record store",
+  "version": "0.0.1",
+  "authors": [
+    "ariellyrycs <ariel_556@hotmail.com>"
+  ],
+  "main": "app/index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "ember": "~1.7.0",
+    "ember-data": "~0.0.14",
+    "bootstrap": "~3.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "~3.0.1",
+    "jquery": "2.0"
+  }
+}

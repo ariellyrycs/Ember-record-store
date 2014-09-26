@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1; user-scalable=1; minimum-scale=1;">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/fonts/doc/style.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+    <main>
+        <div class="frame">
+            <script type="text/x-handlebars">
+                <nav>
+                    <ul>
+                        <li class="padding-right">
+                            <button type="button" class="btn btn-default icon-arrow-left" disabled="disabled"></button>
+                        </li>
+                        <li class="left-arrow-div">
+                            <form class="form-search" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Search</button>
+                            </form>
+                        </li>
+                        <li>
+                            {{#link-to "artists" id="show-artist" class="create-btn btn btn-default"}} All artists {{/link-to}}
+                        </li>
+                        <li>
+                            {{#link-to "records" id="show-records" class="create-btn btn btn-default"}} All records {{/link-to}}
+                        </li>
+                        <li>
+                            {{#link-to "songs" id="show-songs" class="create-btn btn btn-default"}} All songs {{/link-to}}
+                        </li>
+                    </ul>
+                </nav>
+                {{outlet}}
+            </script>
+            <script type="text/x-handlebars" id="artists">
+                <section id="section-artist" class="section-artist">
+                    <div class="artist">
+                        <ul id="artist-list">
+                            {{outlet}}
+                        </ul>
+                    </div>
+                </section>
+            </script>
+            <script type="text/x-handlebars" id="artists/index">
+                {{#each model itemController="artist"}}
+                    {{#link-to 'artists.view' id tagName='li' class="artist-item"}}
+                        <img src="http://placehold.it/140x140" alt=""/>
+                            {{#if isEditing}}
+                                <form {{action "createItem" id on="submit"}} class="input-edit">
+                                    {{input type="text" value=name}}
+                                    {{input type="submit"}}
+                                </form>
+                            {{else}}
+                                <p>
+                                    <span>{{name}}</span>
+                                </p>
+                                <button {{action 'delete' id}} class="icon-trashcan icon-black btn  button-pad hide-item" title="delete"></button>
+                                <button {{action 'editTodo' on="click"}} class="icon-pencil icon-black btn  button-pad hide-item" title="edit"></button>
+                            {{/if}}
+                    {{/link-to}}
+                {{/each}}
+            </script>
+            <script type="text/x-handlebars" id="artists/view">
+                {{#each model itemController="record"}}
+                    {{#link-to 'songs.view' this tagName='li' class="record-item"}}
+                        <img src="http://placehold.it/100x100" alt=""/>
+                        {{#if isEditing}}
+                            <form {{action "editRecord" id on="submit"}} class="input-edit">
+                                {{input type="text" value=title}}
+                                {{input type="text" value=year}}
+                                {{input type="submit"}}
+                            </form>
+                        {{else}}
+                            <p>
+                                <span>{{title}}</span>
+                                <span>{{year}}</span>
+                            </p>
+                            <button {{action 'delete' id}} class="icon-trashcan icon-black btn  button-pad hide-item" title="delete"></button>
+                            <button {{action 'editTodo' on="click"}} class="icon-pencil icon-black btn  button-pad hide-item" title="edit"></button>
+                        {{/if}}
+                    {{/link-to}}
+                {{/each}}
+            </script>
+            <script type="text/x-handlebars" id="artists/edit">
+                <div>{{name}}
+                    <input type="text" value={{name}}></input>
+                </div>
+            </script>
+            <script type="text/x-handlebars" id="records">
+                {{ outlet }}
+            </script>
+            <script type="text/x-handlebars" id="records/view">
+                <section id="section-record" class="section-record notToShow">
+                    <div class="record">
+                        <ul>
+                            <li>
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" alt=""/>
+                                <p>
+                                    <span>ajhsadksahdjksahdjksadghsdashjdsahdasdhsasd</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </script>
+            <script type="text/x-handlebars" id="songs">
+                <section id="section-songs" class="section-songs notToShow"">
+                    <div class="songs">
+                        <ul>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </script>
+            <script type="text/x-handlebars" id="songs/index">
+
+            </script>
+        </div>
+        <footer></footer>
+    </main>
+    <script type="text/javascript" src="libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="libs/handlebars/handlebars.js"></script>
+    <script type="text/javascript" src="libs/ember/ember.js"></script>
+    <script type="text/javascript" src="libs/ember-data/ember-data.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/items-controller.js"></script>
+    <script type="text/javascript" src="js/view.js"></script>
+</body>
+</html>
